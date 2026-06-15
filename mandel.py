@@ -18,14 +18,14 @@ def mandel(z):
 def show_mandel():
     ULEFT = -1.5 + 1j
     LRIGHT = .5 - 1j
-    XSTEPS, YSTEPS=(60, 30)
+    XSTEPS, YSTEPS=(100, 25)
     for ystep in range(YSTEPS):
         for xstep in range(XSTEPS):
             z = complex(ULEFT.real + ((xstep+0.0)/XSTEPS)*(LRIGHT.real-ULEFT.real),
                         ULEFT.imag + ((ystep+0.0)/YSTEPS)*(LRIGHT.imag-ULEFT.imag) )
             ch = '.'
             if mandel(z)==0:
-                ch = '*'
+                ch = '&'
             print(ch, end='')
         print('<p>')
 

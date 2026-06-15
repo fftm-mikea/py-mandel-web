@@ -28,3 +28,8 @@ jobs:
         context: .
         push: true
         tags: ${{ secrets.DOCKER_USERNAME }}/py-mandel-web:latest
+
+    - name: Tell render.com to get latest image with webhook
+      run: |
+            curl -X GET ${{ secrets.RENDER_WEBHOOK }}
+
